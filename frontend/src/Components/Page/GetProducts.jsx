@@ -171,7 +171,7 @@ export default function GetProducts() {
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }} className="bg-white">
       
       {/* Hero Section */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-orange-500 via-red-600 to-red-500 overflow-hidden">
+      <section className="relative py-8 sm:py-12 md:py-26 lg:py-50 bg-gradient-to-br from-orange-500 via-red-600 to-red-500 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
