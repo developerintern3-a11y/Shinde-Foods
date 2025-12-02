@@ -17,7 +17,7 @@ export default function HeroSlider() {
     {
       id: 1,
       title: "Premium Frozen Foods for", 
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image1
@@ -25,7 +25,7 @@ export default function HeroSlider() {
     {
       id: 2,
       title: "Premium Frozen Foods for",
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image2
@@ -33,7 +33,7 @@ export default function HeroSlider() {
     {
       id: 3,
       title: "Premium Frozen Foods for",
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image3
@@ -41,7 +41,7 @@ export default function HeroSlider() {
     {
       id: 4,
       title: "Premium Frozen Foods for",
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image4
@@ -49,7 +49,7 @@ export default function HeroSlider() {
     {
       id: 5,
       title: "Premium Frozen Foods for",
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image5
@@ -57,7 +57,7 @@ export default function HeroSlider() {
     {
       id: 6,
       title: "Premium Frozen Foods for",
-      highlight: "Export and Retail",
+      highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
       image: image6
@@ -108,8 +108,8 @@ export default function HeroSlider() {
             </div>
 
             {/* Content */}
-            <div className="relative h-full flex items-center mt-7">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="relative h-full flex items-center mt-4 sm:mt-6 md:mt-7">
+              <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
                 <div className="max-w-3xl">
                   {/* Subtitle with animation */}
                   <div
@@ -119,14 +119,14 @@ export default function HeroSlider() {
                         : 'translate-y-10 opacity-0'
                     }`}
                   >
-                    <span className="inline-block px-4 py-2 bg-[#8B1B1F] text-white text-sm font-semibold rounded-full mb-4">
+                    <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#8B1B1F] text-white text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
                       SHINDE FOODS
                     </span>
                   </div>
 
                   {/* Title with animation - Split into regular and highlighted parts */}
                   <h1
-                    className={`text-5xl md:text-6xl font-bold text-white mb-7 leading-tight transform transition-all duration-700 delay-300 ${
+                    className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-5 md:mb-7 leading-tight transform transition-all duration-700 delay-300 ${
                       index === currentSlide
                         ? 'translate-y-0 opacity-100'
                         : 'translate-y-10 opacity-0'
@@ -134,14 +134,14 @@ export default function HeroSlider() {
                   >
                     {slide.title}
                     <br />
-                    <span className="text-6xl md:text-6xl font-black bg-gradient-to-r from-[#20bf0f] to-[#0fb54a] bg-clip-text text-transparent drop-shadow-lg" >
+                    <span className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-[#20bf0f] to-[#0fb54a] bg-clip-text text-transparent drop-shadow-lg" >
                       {slide.highlight}
                     </span>
                   </h1>
 
                   {/* Subtitle text with animation */}
                   <p
-                    className={`text-2xl md:text-2xl text-[#FBE5E5] font-semibold mb-4 transform transition-all duration-700 delay-400 ${
+                    className={`text-lg sm:text-xl md:text-2xl text-[#FBE5E5] font-semibold mb-3 sm:mb-4 transform transition-all duration-700 delay-400 ${
                       index === currentSlide
                         ? 'translate-y-0 opacity-100'
                         : 'translate-y-10 opacity-0'
@@ -152,7 +152,7 @@ export default function HeroSlider() {
 
                   {/* Description with animation */}
                   <p
-                    className={`text-lg md:text-.5xl text-gray-200 mb-8 transform transition-all duration-700 delay-500 ${
+                    className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-5 sm:mb-6 md:mb-8 transform transition-all duration-700 delay-500 ${
                       index === currentSlide
                         ? 'translate-y-0 opacity-100'
                         : 'translate-y-10 opacity-0'
@@ -163,7 +163,7 @@ export default function HeroSlider() {
 
                   {/* CTA Buttons with animation */}
                   <div
-                    className={`flex flex-wrap gap-4 transform transition-all duration-700 delay-600 ${
+                    className={`flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 transform transition-all duration-700 delay-600 ${
                       index === currentSlide
                         ? 'translate-y-0 opacity-100'
                         : 'translate-y-10 opacity-0'
@@ -172,17 +172,17 @@ export default function HeroSlider() {
                     <a 
                       href="/catalogue.pdf" 
                       download
-                      className="flex items-center gap-2 px-8 py-4 bg-[#8B1B1F] hover:bg-[#6B1519] text-white text-lg font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[#A52A2A]/50 cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#8B1B1F] hover:bg-[#6B1519] text-white text-sm sm:text-base md:text-lg font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[#A52A2A]/50 cursor-pointer"
                     >
-                      <Download className="w-5 h-5" />
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                       Download Catalogue
                     </a>
                     <button
                       onClick={() => navigate('/contact')}
-                      className="flex items-center gap-2 px-8 py-4 bg-[#0d6802] hover:bg-[#188407] text-white text-lg font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[#20bf0f]/50 cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#0d6802] hover:bg-[#188407] text-white text-sm sm:text-base md:text-lg font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-[#20bf0f]/50 cursor-pointer"
                     >
                      
-                      <Phone className="w-5 h-5" />
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                        Contact for Bulk Order
                     </button>
                    
@@ -195,7 +195,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -204,15 +204,15 @@ export default function HeroSlider() {
             onMouseLeave={() => setIsAutoPlaying(true)}
             className={`transition-all duration-300 rounded-full ${
               index === currentSlide
-                ? 'w-12 h-3 bg-[#8B1B1F]'
-                : 'w-3 h-3 bg-white/50 hover:bg-white/80'
+                ? 'w-8 sm:w-10 md:w-12 h-2.5 sm:h-3 bg-[#8B1B1F]'
+                : 'w-2.5 sm:w-3 h-2.5 sm:h-3 bg-white/50 hover:bg-white/80'
             }`}
           />
         ))}
       </div>
 
       {/* Slide Counter */}
-      <div className="absolute top-24 right-8 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full font-semibold">
+      <div className="absolute top-20 sm:top-22 md:top-24 right-4 sm:right-6 md:right-8 bg-black/50 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm md:text-base">
         {currentSlide + 1} / {slides.length}
       </div>
     </div>

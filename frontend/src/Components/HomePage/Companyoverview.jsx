@@ -10,6 +10,9 @@ import {
   ChevronUp,
 } from "lucide-react";
 import phetaLogo from "../../assets/Homeimg/Pheta.png";
+import momosImg from "../../assets/AboutUs/momos2.png";
+import parathaImg from "../../assets/AboutUs/Paratha2.png";
+import frozenVegImg from "../../assets/AboutUs/fronzenfood1.png";
 
 export default function CompanyIntro() {
   const [expandedCard, setExpandedCard] = useState(null);
@@ -167,58 +170,58 @@ export default function CompanyIntro() {
     {
       id: 1,
       name: "Momos (Veg & Non-Veg)",
-      image: "/src/assets/Homeimg/image4.png",
+      image: momosImg,
       badge: "READY IN 15 MIN",
     },
     {
       id: 2,
       name: "Parathas (All Variants)",
-      image: "/src/assets/Homeimg/image5.png",
+      image: parathaImg,
       badge: "AUTHENTIC TASTE",
     },
     {
       id: 3,
       name: "Frozen Vegetables",
-      image: "/src/assets/Homeimg/image6.png",
+      image: frozenVegImg,
       badge: "FARM FRESH",
     },
   ];
 
   return (
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }}>
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
           {/* Shinde Foods Company Heading */}
-          <div className="text-center mb-14 relative">
+          <div className="text-center mb-8 sm:mb-10 md:mb-14 relative">
             {/* Logo, Text and Decorative Line in One Line */}
-            <div className="flex items-center justify-center gap-4 mb-7">
-              {/* Left Decorative Line */}
-              <div className="flex items-center justify-center  gap-0">
-                <div className="w-12 h-1 bg-gradient-to-r from-transparent to-[#8B1B1F]"></div>
-                <div className="w-3 h-3 bg-[#8B1B1F] rounded-full"></div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-5 sm:mb-6 md:mb-7">
+              {/* Left Decorative Line - Hidden on mobile */}
+              <div className="hidden md:flex items-center justify-center gap-0">
+                <div className="w-8 lg:w-12 h-1 bg-gradient-to-r from-transparent to-[#8B1B1F]"></div>
+                <div className="w-2 lg:w-3 h-2 lg:h-3 bg-[#8B1B1F] rounded-full"></div>
               </div>
 
               {/* Logo */}
               <img
                 src={phetaLogo}
                 alt="Shinde Foods Logo"
-                className="h-25 w-auto object-contain ml-0"
+                className="h-16 sm:h-20 md:h-22 lg:h-25 w-auto object-contain"
               />  
 
               {/* Text */}
-              <h2 className="relative text-3xl md:text-4xl font-black tracking-tight whitespace-nowrap">
+              <h2 className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-center md:whitespace-nowrap px-2">
                 <span className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] bg-clip-text text-transparent">
                   SHINDE FOODS -
                  </span>
-                <span className="text-gray-700 ml-4">
+                <span className="text-gray-700 md:ml-4 block md:inline mt-1 md:mt-0">
                    Quality You Can Trust
                 </span>
               </h2>
 
-              {/* Right Decorative Line */}
-              <div className="flex items-center justify-center gap-0">
-                <div className="w-3 h-3 bg-[#A52A2A] rounded-full"></div>
-                <div className="w-12 h-1 bg-gradient-to-r from-[#6B1519] to-transparent"></div>
+              {/* Right Decorative Line - Hidden on mobile */}
+              <div className="hidden md:flex items-center justify-center gap-0">
+                <div className="w-2 lg:w-3 h-2 lg:h-3 bg-[#A52A2A] rounded-full"></div>
+                <div className="w-8 lg:w-12 h-1 bg-gradient-to-r from-[#6B1519] to-transparent"></div>
               </div>
             </div>
 
@@ -228,73 +231,73 @@ export default function CompanyIntro() {
           {/* Category Cards - Business Segments */}
 
           {/* Company Description */}
-          <div className="max-w-6xl mx-auto mb-25">
-            <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-              <p className="text-justify first-letter:text-5xl first-letter:font-black first-letter:text-[#8B1B1F] first-letter:mr-2 first-letter:float-left first-letter:leading-none first-letter:h-12">
+          <div className="max-w-6xl mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-25">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+              <p className="text-justify first-letter:text-3xl sm:first-letter:text-4xl md:first-letter:text-5xl first-letter:font-black first-letter:text-[#8B1B1F] first-letter:mr-1 sm:first-letter:mr-2 first-letter:float-left first-letter:leading-none first-letter:h-8 sm:first-letter:h-10 md:first-letter:h-12">
                 Shinde Foods is a dynamic and quality-focused merchant exporter specializing in a wide range of premium frozen foods. Based in Pune, Maharashtra, the company has established itself as a reliable partner for both domestic and international buyers seeking high-quality, ready-to-eat (RTE) and ready-to-cook (RTC) food products. The company's business model is built on a robust network of partner factories, each adhering to stringent quality standards and export-grade hygiene protocols. This multi-plant production system allows Shinde Foods to offer a diverse and consistent product portfolio, ensuring a reliable supply chain for its clients. The company's commitment to excellence is evident in every aspect of its operations, from sourcing the finest raw materials to implementing rigorous quality control measures and maintaining an unbroken cold chain. Shinde Foods is dedicated to providing its customers with products that are not only delicious and convenient but also meet the highest international food safety standards, making it a trusted name in the global frozen food market.
               </p>
 
               {/* Key Highlights Section */}
-              <div className="bg-gradient-to-r from-[#FDF2F2] to-[#FBE5E5] rounded-2xl p-8 border-2 border-[#FBE5E5] mt-12">
-                <h3 className="text-2xl font-black text-[#8B1B1F] mb-6">Key Highlights</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+              <div className="bg-gradient-to-r from-[#FDF2F2] to-[#FBE5E5] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-[#FBE5E5] mt-8 sm:mt-10 md:mt-12">
+                <h3 className="text-xl sm:text-2xl font-black text-[#8B1B1F] mb-4 sm:mb-5 md:mb-6">Key Highlights</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">Dynamic Merchant Exporter</h4>
-                      <p className="text-gray-700">Specializing in premium frozen foods with a strong network of partner factories</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">Dynamic Merchant Exporter</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Specializing in premium frozen foods with a strong network of partner factories</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">Multi-Plant Production System</h4>
-                      <p className="text-gray-700">Ensures diverse and consistent product portfolio with reliable supply chain</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">Multi-Plant Production System</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Ensures diverse and consistent product portfolio with reliable supply chain</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">Export-Grade Quality Standards</h4>
-                      <p className="text-gray-700">Rigorous quality control, finest raw materials, and unbroken cold chain management</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">Export-Grade Quality Standards</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Rigorous quality control, finest raw materials, and unbroken cold chain management</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">International Food Safety Standards</h4>
-                      <p className="text-gray-700">Meets highest global food safety standards, trusted name in frozen food market</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">International Food Safety Standards</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Meets highest global food safety standards, trusted name in frozen food market</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">RTE & RTC Solutions</h4>
-                      <p className="text-gray-700">Ready-to-Eat and Ready-to-Cook products for modern, convenient lifestyles</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">RTE & RTC Solutions</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Ready-to-Eat and Ready-to-Cook products for modern, convenient lifestyles</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold">✓</span>
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-xs sm:text-sm">✓</span>
                     </div>
                     <div>
-                      <h4 className="font-black text-gray-900 mb-1">Global Reach & Trust</h4>
-                      <p className="text-gray-700">Reliable partner for domestic and international buyers worldwide</p>
+                      <h4 className="font-black text-gray-900 mb-1 text-sm sm:text-base">Global Reach & Trust</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm md:text-base">Reliable partner for domestic and international buyers worldwide</p>
                     </div>
                   </div>
                 </div>
@@ -303,11 +306,11 @@ export default function CompanyIntro() {
           </div>
 
           {/* Accordion Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {keyDifferentiators.map((item) => (
               <div
                 key={item.id}
-                className={`rounded-2xl bg-gradient-to-br ${
+                className={`rounded-xl sm:rounded-2xl bg-gradient-to-br ${
                   item.bgGradient
                 } border-2 ${item.borderColor} ${
                   item.hoverBorder
@@ -320,60 +323,60 @@ export default function CompanyIntro() {
                 {/* Header */}
                 <div
                   onClick={() => toggleCard(item.id)}
-                  className="p-8 flex justify-between cursor-pointer"
+                  className="p-4 sm:p-6 md:p-8 flex justify-between cursor-pointer"
                 >
                   <div className="flex-1">
                     <div
-                      className={`w-14 h-14 mb-4 rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br ${
+                      className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg bg-gradient-to-br ${
                         item.gradient
                       } transition-transform duration-300 ${
                         expandedCard === item.id ? "scale-110" : ""
                       }`}
                     >
-                      <item.icon className="w-7 h-7 text-white" />
+                      <item.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                     </div>
 
-                    <h4 className="text-xl font-bold mb-2 text-gray-900">
+                    <h4 className="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 text-gray-900">
                       {item.title}
                     </h4>
-                    <p className="text-gray-600">{item.shortDesc}</p>
+                    <p className="text-sm sm:text-base text-gray-600">{item.shortDesc}</p>
                   </div>
 
-                  <div className="ml-4 transition-transform duration-300">
+                  <div className="ml-2 sm:ml-3 md:ml-4 transition-transform duration-300">
                     {expandedCard === item.id ? (
-                      <ChevronUp className="text-[#8B1B1F] rotate-180" />
+                      <ChevronUp className="text-[#8B1B1F] rotate-180 w-5 h-5 sm:w-6 sm:h-6" />
                     ) : (
-                      <ChevronDown className="text-[#8B1B1F]" />
+                      <ChevronDown className="text-[#8B1B1F] w-5 h-5 sm:w-6 sm:h-6" />
                     )}
                   </div>
                 </div>
 
                 {/* Collapsible Content */}
                 <div
-                  className={`px-8 overflow-hidden transition-all duration-500 ${
+                  className={`px-4 sm:px-6 md:px-8 overflow-hidden transition-all duration-500 ${
                     expandedCard === item.id
                       ? "max-h-[999px] opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="pb-8 pt-4 border-t border-gray-200">
+                  <div className="pb-4 sm:pb-6 md:pb-8 pt-3 sm:pt-4 border-t border-gray-200">
                     {/* Subtitle */}
-                    <h5 className="text-lg font-bold mb-4 text-[#8B1B1F]">
+                    <h5 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-[#8B1B1F]">
                       {item.detailedInfo.subtitle}
                     </h5>
 
                     {/* Description */}
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4">
                       {item.detailedInfo.description}
                     </p>
 
                     {/* Key points */}
                     {item.detailedInfo.keyPoints && (
-                      <ul className="space-y-2">
+                      <ul className="space-y-1.5 sm:space-y-2">
                         {item.detailedInfo.keyPoints.map((point, idx) => (
-                          <li key={idx} className="flex gap-2 text-gray-700">
-                            <span className="text-orange-600">•</span>
-                            {point}
+                          <li key={idx} className="flex gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base text-gray-700">
+                            <span className="text-orange-600 shrink-0">•</span>
+                            <span>{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -381,19 +384,19 @@ export default function CompanyIntro() {
 
                     {/* Categories */}
                     {item.detailedInfo.categories && (
-                      <div className="space-y-3 mt-3">
+                      <div className="space-y-2 sm:space-y-3 mt-2 sm:mt-3">
                         {item.detailedInfo.categories.map((cat, idx) => (
                           <div
                             key={idx}
-                            className="bg-white/70 p-3 rounded-lg shadow"
+                            className="bg-white/70 p-2.5 sm:p-3 rounded-lg shadow"
                           >
-                            <h6 className="font-semibold text-gray-800">
+                            <h6 className="font-semibold text-gray-800 text-xs sm:text-sm md:text-base">
                               {cat.name}
                             </h6>
-                            <p className="text-gray-600">{cat.items}</p>
+                            <p className="text-gray-600 text-xs sm:text-sm">{cat.items}</p>
                           </div>
                         ))}
-                        <p className="font-semibold italic text-gray-800 mt-4">
+                        <p className="font-semibold italic text-gray-800 mt-3 sm:mt-4 text-xs sm:text-sm md:text-base">
                           {item.detailedInfo.conclusion}
                         </p>
                       </div>
@@ -401,25 +404,25 @@ export default function CompanyIntro() {
 
                     {/* Features */}
                     {item.detailedInfo.features && (
-                      <div className="space-y-4 mt-4">
+                      <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
                         {item.detailedInfo.features.map((feature, idx) => (
                           <div
                             key={idx}
-                            className="bg-white/70 p-4 rounded-lg shadow"
+                            className="bg-white/70 p-3 sm:p-4 rounded-lg shadow"
                           >
-                            <h6 className="font-bold text-gray-800 mb-3 text-base border-b-2 border-orange-600 pb-2">
+                            <h6 className="font-bold text-gray-800 mb-2 sm:mb-3 text-sm sm:text-base border-b-2 border-orange-600 pb-1.5 sm:pb-2">
                               {feature.title}
                             </h6>
-                            <ul className="space-y-2">
+                            <ul className="space-y-1.5 sm:space-y-2">
                               {feature.points.map((point, pIdx) => (
                                 <li
                                   key={pIdx}
-                                  className="flex items-start gap-2"
+                                  className="flex items-start gap-1.5 sm:gap-2"
                                 >
-                                  <span className="text-orange-600 mt-1">
+                                  <span className="text-orange-600 mt-0.5 sm:mt-1 shrink-0 text-xs sm:text-sm">
                                     ✓
                                   </span>
-                                  <span className="text-gray-700 text-sm">
+                                  <span className="text-gray-700 text-xs sm:text-sm">
                                     {point}
                                   </span>
                                 </li>

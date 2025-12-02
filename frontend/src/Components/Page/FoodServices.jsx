@@ -34,7 +34,7 @@ export default function FoodDeliveryLanding() {
           </svg>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-8 py-3 grid grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 z-10">
         
@@ -45,28 +45,15 @@ export default function FoodDeliveryLanding() {
               Export <span className="font-black text-[#8B1B1F]">Excellence.</span>
             </h1>
 
-            {/* Search Bar */}
-            <form onSubmit={handleSearch} className="relative max-w-md">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search our products"
-                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-orange-500 focus:outline-none pr-12"
-              />
-              <button type="submit" className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors">
-                <Search size={20} />
-              </button>
-            </form>
-
+            
             {/* Explore Products Button */}
             <div>
               <button 
                 onClick={handleExploreProducts}
-                className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+                className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
               >
                 Explore Products
-                <ArrowRight size={20} strokeWidth={3} />
+                <ArrowRight size={15} strokeWidth={2} />
               </button>
             </div>
 
@@ -130,15 +117,17 @@ export default function FoodDeliveryLanding() {
             <img
               src={deliveryImage}
               alt="Delivery person with pizza boxes"
-              className="relative z-10 w-full h-auto object-contain"
+              className="relative z-10 w-full h-[500px] object-contain"
+
             />
           </div>
         </div>
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="bg-gradient-to-br from-orange-50 to-yellow-50 py-20">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
+      <section className="bg-gradient-to-br from-orange-50 to-yellow-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Fresh Salad Image with Circular Border */}
           <div className="relative">
             <div className="relative">
@@ -206,7 +195,8 @@ export default function FoodDeliveryLanding() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

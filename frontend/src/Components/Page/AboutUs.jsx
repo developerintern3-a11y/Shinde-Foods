@@ -1,10 +1,14 @@
 import React from 'react';
 import { ShoppingBag, Target, Heart, Award, Shield, Factory, TrendingUp, Users, Star, Leaf, CheckCircle, Globe, Package, Truck } from 'lucide-react';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
-import momosImg from '../../assets/Homeimg/momos.png';
-import parathaImg from '../../assets/Homeimg/Paratha.png';
-import frozenVegImg from '../../assets/Homeimg/FrozenFood.png';
-
+import momosImg from '../../assets/AboutUs/momos2.png';
+import parathaImg from '../../assets/AboutUs/Paratha2.png';
+import samosaImg from '../../assets/AboutUs/samosa.png';
+import frenchFriesImg from '../../assets/AboutUs/frenchfries.png';
+import cokeImg from '../../assets/AboutUs/coke.png';
+import paatiesImg from '../../assets/AboutUs/paaties.png';
+import productImg from '../../assets/AboutUs/productimg.png';
+import timelineImg from '../../assets/AboutUs/timeline.png';
 function AboutUs() {
   const coreValues = [
     {
@@ -79,16 +83,16 @@ function AboutUs() {
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }} className="bg-white">
       
       {/* Hero Section */}
-      <section className="relative py-17 bg-gradient-to-br from-[#FDF2F2] via-white to-[#FBE5E5] overflow-hidden ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mt-10">
+      <section className="relative py-12 sm:py-14 md:py-17 bg-gradient-to-br from-[#FDF2F2] via-white to-[#FBE5E5] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-10 mt-16 sm:mt-18 md:mt-20 lg:mt-24">
           <div className="text-center mb-0">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <img src={phetaLogo} alt="Shinde Foods Logo" className="h-20 w-auto object-contain" />
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
+              <img src={phetaLogo} alt="Shinde Foods Logo" className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain" />
             </div>
-            <h1 className="text-5xl md:text-5xl font-black text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 sm:mb-5 md:mb-6">
               About <span className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] bg-clip-text text-transparent">Shinde Foods</span>
             </h1>
-            <p className=" text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               A dynamic merchant exporter specializing in premium quality frozen foods, serving domestic and international markets since 1990
             </p>
           </div>
@@ -96,16 +100,16 @@ function AboutUs() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                  <stat.icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full mb-3 sm:mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                  <stat.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-white" strokeWidth={2.5} />
                 </div>
-                <div className="text-3xl font-black text-[#8B1B1F] mb-2">{stat.value}</div>
-                <div className="text-gray-700 font-semibold">{stat.label}</div>
+                <div className="text-2xl sm:text-2xl md:text-3xl font-black text-[#8B1B1F] mb-1.5 sm:mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -113,10 +117,10 @@ function AboutUs() {
       </section>
 
       {/* Company Overview Section */}
-      <section className="py-20 bg-gradient-to-br from-[#FDF2F2] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-black text-gray-900 mb-4">
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#FDF2F2] to-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3 sm:mb-4">
               Company <span className="text-[#8B1B1F]">Overview</span>
             </h2>
             <div className="flex items-center justify-center gap-2 mt-6 mb-12">
@@ -128,35 +132,134 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start mb-12 sm:mb-16 md:mb-20 lg:mb-25">
+            {/* Left - Text Content */}
             <div>
-              <h3 className="text-3xl font-black text-gray-900 mb-6">Introduction to Shinde Foods</h3>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-4 sm:mb-5 md:mb-6">Eat Healthy – Pure Taste, Better Nutrition</h3>
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
                 <p className="text-justify">
-                  Shinde Foods is a dynamic and forward-thinking merchant exporter specializing in premium quality frozen foods, strategically headquartered in Pune, Maharashtra. Established as a Proprietorship Firm on <span className="font-bold text-[#8B1B1F]">December 15, 1990</span>, the company has rapidly positioned itself as a reliable partner for both domestic and international markets.
+                  Shinde Foods brings you clean, tasty, and nutritious frozen foods made with <span className="font-bold text-[#8B1B1F]">real ingredients</span>. Established in Pune, Maharashtra on <span className="font-bold text-[#8B1B1F]">December 15, 1990</span>, we specialize in premium quality <span className="font-bold">Ready-to-Eat (RTE)</span> and <span className="font-bold">Ready-to-Cook (RTC)</span> products that combine authentic taste with modern nutrition.
                 </p>
                 <p className="text-justify">
-                  Our core business revolves around sourcing and supplying a diverse range of <span className="font-bold">Ready-to-Eat (RTE)</span> and <span className="font-bold">Ready-to-Cook (RTC)</span> frozen products, meticulously manufactured in collaboration with our network of partner factories. This unique multi-plant production system allows us to maintain a robust supply chain and cater to a wide array of client requirements, from retail packaging to bulk orders for the HoReCa (Hotel, Restaurant, and Catering) sector.
+                  Our commitment to healthy eating means <span className="font-bold text-[#8B1B1F]">no maida, no added colours, and no shortcuts</span>—just honest food for everyday life. From whole-wheat momos steamed to perfection, to baked samosas with 40% less oil, every product is crafted with care to bring you restaurant-quality taste with home-style purity.
                 </p>
                 <p className="text-justify">
-                  As a merchant exporter, we act as a crucial link between our partner manufacturers and the global market, leveraging our expertise in international trade, logistics, and quality assurance to facilitate seamless transactions. Our dedication to export-grade hygiene and quality-focused manufacturing processes is unwavering, forming the bedrock of our brand identity and the trust our clients place in us.
+                  As a merchant exporter with export-grade hygiene standards, we serve both domestic and international markets through our robust multi-plant production system. Whether for retail consumers or the HoReCa sector, our diverse range of frozen foods ensures convenience without compromising on quality, taste, or nutritional value.
                 </p>
+                
+                {/* Healthy Product Highlights */}
+                <div className="mt-4 sm:mt-5 md:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="bg-gradient-to-br from-green-50 to-white p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-green-100">
+                    <h4 className="font-black text-[#8B1B1F] mb-1.5 sm:mb-2 text-sm sm:text-base">🥟 Healthy Momos</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Whole-wheat • Steamed • No preservatives</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-orange-50 to-white p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-orange-100">
+                    <h4 className="font-black text-[#8B1B1F] mb-1.5 sm:mb-2 text-sm sm:text-base">🥙 Baked Samosa</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Millet+Oats • 40% less oil • Crispy</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-yellow-50 to-white p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-yellow-100">
+                    <h4 className="font-black text-[#8B1B1F] mb-1.5 sm:mb-2 text-sm sm:text-base">🫓 Soft Parathas</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Whole-wheat • High fibre • No maida</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-red-50 to-white p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 border-red-100">
+                    <h4 className="font-black text-[#8B1B1F] mb-1.5 sm:mb-2 text-sm sm:text-base">🍛 Ready Gravies</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Clean label • Low sodium • Home-style</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <img src={momosImg} alt="Frozen Momos" className="w-full h-64 object-cover rounded-2xl shadow-lg" />
-              <img src={parathaImg} alt="Frozen Parathas" className="w-full h-64 object-cover rounded-2xl shadow-lg mt-8" />
-              <img src={frozenVegImg} alt="Frozen Vegetables" className="w-full h-64 object-cover rounded-2xl shadow-lg -mt-8" />
-              <img src={momosImg} alt="Products" className="w-full h-64 object-cover rounded-2xl shadow-lg" />
+
+            {/* Right - Product Gallery (6 Images) */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-0 lg:pt-20">
+              <div className="relative group overflow-hidden rounded-lg sm:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src={momosImg} alt="Frozen Momos" className="w-full h-32 sm:h-36 md:h-40 lg:h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-1.5 sm:bottom-2 left-1.5 sm:left-2 text-white">
+                    <p className="font-black text-xs sm:text-sm">Momos</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 mt-4">
+                <img src={parathaImg} alt="Frozen Parathas" className="w-full h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 left-2 text-white">
+                    <p className="font-black text-sm">Parathas</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src={samosaImg} alt="Frozen Samosa" className="w-full h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 left-2 text-white">
+                    <p className="font-black text-sm">Samosas</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 mt-4">
+                <img src={frenchFriesImg} alt="French Fries" className="w-full h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 left-2 text-white">
+                    <p className="font-black text-sm">French Fries</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src={paatiesImg} alt="Patties" className="w-full h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 left-2 text-white">
+                    <p className="font-black text-sm">Patties</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 mt-4">
+                <img src={cokeImg} alt="Special Fries" className="w-full h-45 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-2 left-2 text-white">
+                    <p className="font-black text-sm">Special Fries</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Product Portfolio */}
           <div className="bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
-            <h3 className="text-3xl font-black text-gray-900 mb-6 text-center">Our Product Portfolio</h3>
-            <p className="text-gray-700 leading-relaxed text-justify mb-6">
-              Our product portfolio is a testament to our deep understanding of market trends and consumer preferences. We offer a comprehensive selection of frozen foods, including popular items like <span className="font-bold text-[#8B1B1F]">Frozen Veg Momos, Frozen Chicken Momos</span>, a variety of <span className="font-bold text-[#8B1B1F]">Parathas, Samosas, Spring Rolls, and Nuggets</span>, alongside essential frozen vegetables such as <span className="font-bold text-[#8B1B1F]">Sweet Corn, Mixed Vegetables, and Green Peas</span>.
-            </p>
+             <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-4xl font-black text-gray-900 mb-4">
+              Our Product<span className="text-[rgb(139,27,31)]">  Portfolio</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-6 mb-12">
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent to-[#8B1B1F]"></div>
+              <div className="w-3 h-3 bg-[#8B1B1F] rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519]"></div>
+              <div className="w-3 h-3 bg-[#A52A2A] rounded-full"></div>
+              <div className="w-12 h-1 bg-gradient-to-r from-[#6B1519] to-transparent"></div>
+            </div>
+          </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-8">
+              {/* Left - Product Image */}
+              <div className="relative group">
+                <img 
+                  src={productImg} 
+                  alt="Product Portfolio" 
+                  className="w-full h-70 object-contain rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Right - Description */}
+              <div>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  Our product portfolio is a testament to our deep understanding of market trends and consumer preferences. We offer a comprehensive selection of frozen foods, including popular items like <span className="font-bold text-[#8B1B1F]">Frozen Veg Momos, Frozen Chicken Momos</span>, a variety of <span className="font-bold text-[#8B1B1F]">Parathas, Samosas, Spring Rolls, and Nuggets</span>, alongside essential frozen vegetables such as <span className="font-bold text-[#8B1B1F]">Sweet Corn, Mixed Vegetables, and Green Peas</span>.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-6 rounded-xl border border-[#FBE5E5]">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center mb-4">
@@ -185,16 +288,16 @@ function AboutUs() {
       </section>
 
       {/* Mission and Vision Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="py-6 sm:py-8 md:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
             {/* Mission */}
-            <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-10 rounded-3xl shadow-xl border border-[#FBE5E5]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shadow-lg">
-                  <Target className="w-8 h-8 text-white" strokeWidth={2.5} />
+            <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-[#FBE5E5]">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center shadow-lg">
+                  <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
                 </div>
-                <h3 className="text-3xl font-black text-gray-900">Our Mission</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">Our Mission</h3>
               </div>
               <p className="text-gray-700 leading-relaxed text-justify mb-6">
                 To be a leading provider of premium, export-quality frozen foods that combine authentic taste with unparalleled convenience. We are dedicated to sourcing and delivering products that meet the highest international standards of food safety and hygiene, ensuring the complete satisfaction of our B2B clients and their end consumers.
@@ -246,10 +349,10 @@ function AboutUs() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 bg-gradient-to-br from-[#FDF2F2] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-4xl font-black text-gray-900 mb-4">
+      <section className="py-6 sm:py-8 md:py-10 bg-gradient-to-br from-[#FDF2F2] to-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3 sm:mb-4">
               Our Core <span className="text-[#8B1B1F]">Values</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -257,17 +360,17 @@ function AboutUs() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {coreValues.map((value, index) => (
               <div 
                 key={index}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#8B1B1F]"
+                className="group bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#8B1B1F]"
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${value.color} rounded-full mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <value.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
+                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${value.color} rounded-full mb-4 sm:mb-5 md:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <value.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" strokeWidth={2.5} />
                 </div>
-                <h4 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[#8B1B1F] transition-colors">{value.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h4 className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 mb-2 sm:mb-3 group-hover:text-[#8B1B1F] transition-colors">{value.title}</h4>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -279,15 +382,15 @@ function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-4xl font-black text-gray-900 mb-4">
-              Our <span className="text-[#8B1B1F]">Story</span>
+              Our <span className="text-[#8B1B1F]">Journey</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              A journey of growth, dedication, and commitment to excellence since 1990
+              Three decades of excellence, innovation, and commitment to quality frozen foods
             </p>
           </div>
 
           {/* Story Introduction */}
-          <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-10 rounded-3xl shadow-xl border border-[#FBE5E5] mb-12">
+          <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-10 rounded-3xl shadow-xl border border-[#FBE5E5] mb-16">
             <h3 className="text-3xl font-black text-gray-900 mb-6">Founding and History</h3>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-justify">
@@ -302,26 +405,13 @@ function AboutUs() {
             </div>
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#8B1B1F] via-[#A52A2A] to-[#6B1519]"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                    <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-[#FBE5E5] hover:shadow-xl transition-shadow">
-                      <div className="text-2xl font-black text-[#8B1B1F] mb-2">{milestone.year}</div>
-                      <h4 className="text-xl font-black text-gray-900 mb-3">{milestone.title}</h4>
-                      <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10">
-                    <div className="w-6 h-6 bg-[#8B1B1F] rounded-full border-4 border-white shadow-lg"></div>
-                  </div>
-                  <div className="flex-1"></div>
-                </div>
-              ))}
-            </div>
+          {/* Horizontal Timeline */}
+          <div className="p-10 rounded-3xl shadow-xl border border-[#FBE5E5]">
+            <img 
+              src={timelineImg} 
+              alt="Company Timeline Journey" 
+              className="w-full h-auto object-contain mx-auto "
+            />
           </div>
         </div>
       </section>
@@ -402,4 +492,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default AboutUs; 

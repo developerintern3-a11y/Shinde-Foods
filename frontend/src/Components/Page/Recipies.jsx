@@ -77,8 +77,8 @@ export default function Quality() {
     },
     {
       icon: Zap,
-      title: 'Real-Time Monitoring',
-      description: 'Advanced monitoring systems with cloud-based data analytics and instant alert notifications',
+      title: 'SCADA-Based Automation',
+      description: 'SCADA system enabling real-time control and temperature monitoring for frozen-food production.',
       badge: 'Live'
     }
   ];
@@ -343,7 +343,7 @@ export default function Quality() {
                       <div className="w-20 h-20 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center mb-6 shadow-lg mx-auto group-hover:scale-110 transition-transform">
                         <process.icon className="w-10 h-10 text-white" strokeWidth={2.5} />
                       </div>
-                      <h3 className="text-2xl font-black text-gray-900 mb-3 text-center">{process.title}</h3>
+                      <h3 className="text-2xl font-blackReal-Time Monitoring text-gray-900 mb-3 text-center">{process.title}</h3>
                       <p className="text-gray-600 leading-relaxed mb-6 text-center">
                         {process.description}
                       </p>
@@ -357,8 +357,8 @@ export default function Quality() {
                       </div>
                     </div>
                     {index < qualityProcess.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                        <div className="w-8 h-1 bg-gradient-to-r from-[#8B1B1F] to-[#A52A2A]"></div>
+                      <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <div className="w-8 h-1 bg-[#8B1B1F]"></div>
                       </div>
                     )}
                   </div>
