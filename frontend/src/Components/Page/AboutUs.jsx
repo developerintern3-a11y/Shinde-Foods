@@ -84,12 +84,12 @@ function AboutUs() {
       
       {/* Hero Section */}
       <section className="relative py-12 sm:py-14 md:py-17 bg-gradient-to-br from-[#FDF2F2] via-white to-[#FBE5E5] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-10 mt-16 sm:mt-18 md:mt-20 lg:mt-24">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-10 mt-16 sm:mt-18 md:mt-20 lg:mt-10">
           <div className="text-center mb-0">
-            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
-              <img src={phetaLogo} alt="Shinde Foods Logo" className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain" />
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-2">
+              <img src={phetaLogo} alt="Shinde Foods Logo" className="h-14 sm:h-16 md:h-30 lg:h-33 w-auto object-contain" />
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 sm:mb-5 md:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 sm:mb-5 md:mb-4">
               About <span className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] bg-clip-text text-transparent">Shinde Foods</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
