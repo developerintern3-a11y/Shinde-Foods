@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Shield, Award, CheckCircle, Factory, Truck, Globe, Package, 
+  Shield, Award, Factory, Truck, Globe, Package, 
   FileText, ThermometerSnowflake, Leaf, Users, TrendingUp, 
   Star, Settings, Target, Eye, ClipboardCheck, Container,
   Sparkles, Zap, Heart, BadgeCheck, Box, Layers, Map, MapPin
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
@@ -266,7 +268,7 @@ export default function Quality() {
                 
                 <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur px-6 py-3 rounded-2xl shadow-xl">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                    <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 text-green-600" />
                     <span className="font-black text-gray-900">HACCP Compliant</span>
                   </div>
                 </div>
@@ -312,7 +314,7 @@ export default function Quality() {
                     <div className="space-y-2">
                       {standard.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-600 shrink-0" />
+                          <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-green-600 shrink-0" />
                           <span className="text-gray-700 text-sm">{highlight}</span>
                         </div>
                       ))}
@@ -572,7 +574,7 @@ export default function Quality() {
                     <div className="space-y-2">
                       {capability.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-600 shrink-0" />
+                          <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-green-600 shrink-0" />
                           <span className="text-gray-700 text-sm">{feature}</span>
                         </div>
                       ))}
@@ -664,19 +666,19 @@ export default function Quality() {
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 shrink-0" />
+                        <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 shrink-0" />
                         <span className="font-semibold">Flexible MOQ for different products</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 shrink-0" />
+                        <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 shrink-0" />
                         <span className="font-semibold">Customized MOQ options available</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 shrink-0" />
+                        <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 shrink-0" />
                         <span className="font-semibold">Tailored solutions for B2B clients</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 shrink-0" />
+                        <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 shrink-0" />
                         <span className="font-semibold">Flexible delivery schedules</span>
                       </div>
                     </div>

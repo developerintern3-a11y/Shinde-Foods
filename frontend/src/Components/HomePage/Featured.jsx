@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Leaf, Shield, Award, Sparkles, Package, UtensilsCrossed, Apple, X } from 'lucide-react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Leaf, Shield, Award, Sparkles, Package, UtensilsCrossed, Apple, ArrowRight } from 'lucide-react';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
 import frozenVegetableImg from '../../assets/Homeimg/FrozenFood.png';
@@ -14,43 +15,7 @@ const productCategories = [
     image: momosImg,
     badge: "READY IN 15 MIN",
     description: "Authentic steamed dumplings filled with fresh vegetables and premium meats",
-    gradient: "from-[#8B1B1F] to-[#A52A2A]",
-    detailedContent: {
-      title: "Frozen Momos (Veg & Chicken)",
-      content: `Frozen momos, both vegetarian and chicken, are a flagship product for Shinde Foods, representing the company's commitment to quality, flavor, and convenience. These delightful dumplings are a popular snack and appetizer, and Shinde Foods has perfected the art of creating authentic, restaurant-quality momos that are ready to cook and enjoy.`,
-      keyHighlights: [
-        {
-          icon: "🥟",
-          title: "Vegetarian Momos",
-          description: "Fresh vegetables with aromatic spices blend"
-        },
-        {
-          icon: "🍗",
-          title: "Chicken Momos",
-          description: "Tender chicken with savory spice mix"
-        },
-        {
-          icon: "🌶️",
-          title: "Multiple Variants",
-          description: "Steamed, fried, and Schezwan flavors"
-        },
-        {
-          icon: "❄️",
-          title: "IQF Technology",
-          description: "Individually quick-frozen for freshness"
-        },
-        {
-          icon: "🏭",
-          title: "State-of-Art Facilities",
-          description: "Strict hygiene and quality standards"
-        },
-        {
-          icon: "⚡",
-          title: "Ready to Cook",
-          description: "Convenient for retailers and restaurants"
-        }
-      ]
-    }
+    gradient: "from-[#8B1B1F] to-[#A52A2A]"
   },
   {
     id: 2,
@@ -60,43 +25,7 @@ const productCategories = [
     image: parathaImg,
     badge: "AUTHENTIC TASTE",
     description: "Traditional Indian flatbreads with delicious fillings - aloo, gobhi, mix veg and more",
-    gradient: "from-[#6B1519] to-[#8B1B1F]",
-    detailedContent: {
-      title: "Parathas (All Variants)",
-      content: `Parathas are a cornerstone of Indian cuisine, and Shinde Foods offers a wide and enticing range of these flaky, stuffed flatbreads. Each paratha is meticulously prepared using high-quality ingredients and traditional recipes, ensuring an authentic taste and texture that is reminiscent of home-cooked food. Pre-cooked and flash-frozen for convenience, they can be easily heated on a tawa or in a microwave.`,
-      keyHighlights: [
-        {
-          icon: "🥔",
-          title: "Aloo Paratha",
-          description: "Classic spiced potato filling"
-        },
-        {
-          icon: "🥦",
-          title: "Gobi Paratha",
-          description: "Nutritious seasoned cauliflower"
-        },
-        {
-          icon: "🥕",
-          title: "Mix Veg & Mooli",
-          description: "Diverse vegetable options including radish"
-        },
-        {
-          icon: "🍄",
-          title: "Innovative Variants",
-          description: "Mushroom and other creative options"
-        },
-        {
-          icon: "🔥",
-          title: "Easy Preparation",
-          description: "Heat on tawa or microwave"
-        },
-        {
-          icon: "🏠",
-          title: "Home-Cooked Taste",
-          description: "Traditional authentic recipe"
-        }
-      ]
-    }
+    gradient: "from-[#6B1519] to-[#8B1B1F]"
   },
   {
     id: 3,
@@ -106,43 +35,7 @@ const productCategories = [
     image: frozenVegetableImg,
     badge: "FARM FRESH",
     description: "Flash-frozen vegetables retaining peak freshness, nutrients and natural flavors",
-    gradient: "from-[#A52A2A] to-[#6B1519]",
-    detailedContent: {
-      title: "Frozen Vegetables",
-      content: `The frozen vegetables category is a key offering from Shinde Foods, providing a range of essential, high-quality ingredients that are a staple in kitchens worldwide. All vegetables are processed using the latest IQF technology, preserving their natural color, flavor, and nutritional value. Sourced from trusted farms with rigorous quality checks, they are packaged in convenient, food-grade bags for both home cooks and professional chefs.`,
-      keyHighlights: [
-        {
-          icon: "🌽",
-          title: "Sweet Corn",
-          description: "Frozen at peak sweetness for crisp texture"
-        },
-        {
-          icon: "🥗",
-          title: "Mixed Vegetables",
-          description: "Nutritious blend of carrots, peas, corn, beans"
-        },
-        {
-          icon: "🫛",
-          title: "Green Peas",
-          description: "Versatile ingredient for various cuisines"
-        },
-        {
-          icon: "❄️",
-          title: "IQF Technology",
-          description: "Preserves color, flavor, and nutrition"
-        },
-        {
-          icon: "🚜",
-          title: "Trusted Farms",
-          description: "Sourced with rigorous quality checks"
-        },
-        {
-          icon: "📦",
-          title: "Long Shelf Life",
-          description: "Food-grade packaging for convenience"
-        }
-      ]
-    }
+    gradient: "from-[#A52A2A] to-[#6B1519]"
   },
 ];
 
@@ -155,15 +48,18 @@ const features = [
 ];
 
 const FeaturedProducts = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const handleExploreClick = (product) => {
-    if (product.detailedContent) {
-      setSelectedProduct(product);
+  const navigate = useNavigate();
+
+  const handleExploreClick = (productName) => {
+    if (productName === "Momos") {
+      navigate('/momos-details');
+    } else if (productName === "Parathas") {
+      navigate('/parathas-details');
+    } else if (productName === "Frozen Vegetables") {
+      navigate('/frozen-vegetables-details');
     }
   };
-  const closeModal = () => {
-    setSelectedProduct(null);
-  };
+
   return (
     <div className="bg-white py-4 sm:py-5 md:py-6 px-3 sm:px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -236,16 +132,14 @@ const FeaturedProducts = () => {
                       {product.description}
                     </p>
                     
-                    {/* Learn More Link */}
-                    <div 
-                      onClick={() => handleExploreClick(product)}
-                      className="mt-3 sm:mt-4 flex items-center justify-center text-[#8B1B1F] font-bold group-hover:text-[#A52A2A] transition-colors cursor-pointer"
+                    {/* Explore More Button */}
+                    <button 
+                      onClick={() => handleExploreClick(product.name)}
+                      className="mt-3 sm:mt-4 flex items-center justify-center font-bold transition-colors cursor-pointer w-full bg-gradient-to-r from-[#8B1B1F] to-[#A52A2A] text-white px-6 py-3 rounded-xl hover:shadow-lg transform hover:scale-105"
                     >
-                      <span className="text-xs sm:text-sm">Explore More</span>
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                      <span className="text-sm">Explore More</span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -268,84 +162,6 @@ const FeaturedProducts = () => {
         </div>
 
       </div>
-
-      {/* Modal for Detailed Product Info */}
-      {selectedProduct && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 md:p-6"
-          onClick={closeModal}
-        >
-          <div 
-            className="bg-white rounded-2xl sm:rounded-3xl max-w-6xl w-full max-h-[85vh] overflow-hidden shadow-2xl relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6 bg-white rounded-full p-1.5 sm:p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
-            >
-              <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
-            </button>
-
-            <div className="flex flex-col md:flex-row h-full max-h-[85vh]">
-              {/* Left Side - Image */}
-              <div className="md:w-1/2 bg-gradient-to-br from-[#FDF2F2] to-white p-6 sm:p-8 md:p-12 flex items-center justify-center">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="w-full h-auto object-contain max-h-[250px] sm:max-h-[300px] md:max-h-[400px]"
-                />
-              </div>
-
-              {/* Right Side - Content */}
-              <div className="md:w-1/2 p-6 sm:p-8 md:p-10 overflow-y-auto">
-                <div className="mb-4 sm:mb-5 md:mb-6">
-                  <span className="inline-block bg-[#8B1B1F] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-wider mb-3 sm:mb-4">
-                    {selectedProduct.badge}
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-1 sm:mb-2">
-                    {selectedProduct.detailedContent.title}
-                  </h2>
-                  <p className="text-[#A52A2A] text-xs sm:text-sm font-bold uppercase tracking-wide mb-4 sm:mb-5 md:mb-6">
-                    {selectedProduct.subtitle}
-                  </p>
-                </div>
-
-                {/* Main Description */}
-                <div className="mb-6 sm:mb-7 md:mb-8">
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-justify">
-                    {selectedProduct.detailedContent.content}
-                  </p>
-                </div>
-
-                {/* Key Highlights */}
-                <div>
-                  <h3 className="text-lg sm:text-xl font-black text-gray-900 mb-3 sm:mb-4 flex items-center">
-                    <span className="w-1 h-5 sm:h-6 bg-gradient-to-b from-[#8B1B1F] to-[#A52A2A] mr-2 sm:mr-3 rounded-full"></span>
-                    Key Highlights
-                  </h3>
-                  <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                    {selectedProduct.detailedContent.keyHighlights.map((highlight, index) => (
-                      <div 
-                        key={index}
-                        className="bg-gradient-to-br from-[#FDF2F2] to-white border border-[#FBE5E5] rounded-xl p-3 sm:p-4 hover:shadow-md transition-shadow"
-                      >
-                        <div className="flex items-start gap-2 sm:gap-3">
-                          <span className="text-xl sm:text-2xl">{highlight.icon}</span>
-                          <div className="flex-1">
-                            <h4 className="font-bold text-gray-900 mb-1 text-sm sm:text-base">{highlight.title}</h4>
-                            <p className="text-gray-600 text-xs sm:text-sm">{highlight.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

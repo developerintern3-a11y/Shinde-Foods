@@ -1,7 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, Building2, Clock, MessageSquare } from "lucide-react";
+import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 function Contactus() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validation
+    if (!formData.fullName || !formData.email || !formData.subject || !formData.message) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/contact/send', formData);
+      
+      if (response.data.success) {
+        toast.success(response.data.message, {
+          duration: 5000,
+          icon: '✅',
+        });
+        
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error(
+        error.response?.data?.message || 'Failed to send message. Please try again.',
+        { duration: 5000 }
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -35,6 +95,8 @@ function Contactus() {
 
   return (
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }} className="bg-white">
+      <Toaster position="top-center" reverseOrder={false} />
+      
       {/* Hero Header */}
       <section className="relative py-6 sm:py-8 md:py-10 bg-gradient-to-br from-[#FDF2F2] via-[#FBE5E5] to-[#FDF2F2] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -157,13 +219,17 @@ function Contactus() {
               <p className="text-sm sm:text-base text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
 
-            <form className="space-y-4 sm:space-y-5 md:space-y-6">
+            <form className="space-y-4 sm:space-y-5 md:space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                 <div>
                   <label className="block text-sm sm:text-base text-gray-700 font-bold mb-1.5 sm:mb-2">Full Name *</label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     placeholder="Your name"
+                    required
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors text-sm sm:text-base"
                   />
                 </div>
@@ -171,7 +237,11 @@ function Contactus() {
                   <label className="block text-sm sm:text-base text-gray-700 font-bold mb-1.5 sm:mb-2">Email Address *</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="your@email.com"
+                    required
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors"
                   />
                 </div>
@@ -182,6 +252,9 @@ function Contactus() {
                   <label className="block text-gray-700 font-bold mb-2">Phone Number</label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="+91 9876543210"
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors"
                   />
@@ -190,6 +263,9 @@ function Contactus() {
                   <label className="block text-gray-700 font-bold mb-2">Company Name</label>
                   <input
                     type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
                     placeholder="Your company"
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors"
                   />
@@ -200,7 +276,11 @@ function Contactus() {
                 <label className="block text-gray-700 font-bold mb-2">Subject *</label>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="How can we help you?"
+                  required
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors"
                 />
               </div>
@@ -209,17 +289,31 @@ function Contactus() {
                 <label className="block text-gray-700 font-bold mb-2">Message *</label>
                 <textarea
                   rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell us more about your inquiry..."
+                  required
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#A52A2A] focus:outline-none transition-colors resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white font-bold py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white font-bold py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </>
+                )}
               </button>
             </form>
           </div>

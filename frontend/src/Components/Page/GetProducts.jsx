@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { 
   Package, Utensils, Leaf, ChefHat, ShoppingBag, Star, 
   Sparkles, Clock, Users, Award, Shield, TrendingUp,
-  CheckCircle, Settings, Zap, Globe, Heart, Factory
+  Settings, Zap, Globe, Heart, Factory, Loader2
 } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
@@ -11,6 +14,30 @@ import frozenVegImg from '../../assets/Homeimg/FrozenFood.png';
 
 export default function GetProducts() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch products from API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:5000/api/products');
+        if (response.data.success) {
+          setProducts(response.data.data);
+        }
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching products:', err);
+        setError('Failed to load products. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const productCategories = [
     {
@@ -167,6 +194,18 @@ export default function GetProducts() {
     ? productCategories 
     : productCategories.filter(cat => cat.id === selectedCategory);
 
+  // Map category ids to the productCategory string used in backend rows
+  const categoryMap = {
+    snacks: 'Frozen Snacks',
+    breads: 'Frozen Breads',
+    vegetables: 'Frozen Vegetables'
+  };
+
+  // Client-side filtered products based on selectedCategory
+  const displayedProducts = selectedCategory === 'all'
+    ? products
+    : products.filter(p => p.productCategory === categoryMap[selectedCategory]);
+
   return (
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }} className="bg-white">
       
@@ -228,9 +267,10 @@ export default function GetProducts() {
         </div>
       </section>
 
-      {/* Category Overview */}
-      <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#FDF2F2] to-white">
+      {/* Database Products Section */}
+      <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          {/* Header */}
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-4">
               Product <span className="text-[#8B1B1F]">Categories</span>
@@ -241,106 +281,144 @@ export default function GetProducts() {
           </div>
 
           {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base font-bold transition-all ${
+              className={`px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
                 selectedCategory === 'all'
-                  ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg'
-                  : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[#8B1B1F]'
+                  ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-[#8B1B1F] hover:text-[#8B1B1F] hover:shadow-md'
               }`}
             >
               All Categories
             </button>
-            {productCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm md:text-base font-bold transition-all flex items-center gap-1.5 sm:gap-2 ${
-                  selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg'
-                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[#8B1B1F]'
-                }`}
-              >
-                <category.icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                {category.name}
-              </button>
-            ))}
+            
+            <button
+              onClick={() => setSelectedCategory('snacks')}
+              className={`flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
+                selectedCategory === 'snacks'
+                  ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-[#8B1B1F] hover:text-[#8B1B1F] hover:shadow-md'
+              }`}
+            >
+              <Package className="w-5 h-5" />
+              Frozen Snacks
+            </button>
+            
+            <button
+              onClick={() => setSelectedCategory('breads')}
+              className={`flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
+                selectedCategory === 'breads'
+                  ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-[#8B1B1F] hover:text-[#8B1B1F] hover:shadow-md'
+              }`}
+            >
+              <Utensils className="w-5 h-5" />
+              Frozen Breads
+            </button>
+            
+            <button
+              onClick={() => setSelectedCategory('vegetables')}
+              className={`flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
+                selectedCategory === 'vegetables'
+                  ? 'bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-[#8B1B1F] hover:text-[#8B1B1F] hover:shadow-md'
+              }`}
+            >
+              <Leaf className="w-5 h-5" />
+              Frozen Vegetables
+            </button>
           </div>
 
-          {/* Category Cards */}
-          <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
-            {filteredCategories.map((category, catIndex) => (
-              <div key={category.id} className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border border-gray-100">
-                {/* Category Header */}
-                <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-7 md:mb-8">
-                  <div className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-lg flex-shrink-0`}>
-                    <category.icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" strokeWidth={2.5} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-1 sm:mb-2">{category.name}</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg">{category.description}</p>
-                  </div>
-                  {/* Animated Floating Icons */}
-                  <div className="hidden md:block relative w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 flex-shrink-0">
-                    {/* Badge 1 - Award */}
-                    <div className={`absolute top-0 left-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-lg border-2 sm:border-3 md:border-4 border-white`}>
-                      <Award className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" strokeWidth={3} />
-                    </div>
-                    {/* Badge 2 - Star (Smaller) */}
-                    <div className={`absolute bottom-0 right-0 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-lg border-2 sm:border-3 md:border-4 border-white animate-pulse`} style={{ animationDuration: '2s' }}>
-                      <Star className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white fill-white" strokeWidth={2} />
-                    </div>
-                  </div>
-                </div>
+          {/* Loading State */}
+          {loading && (
+            <div className="flex flex-col items-center justify-center py-12">
+              <Loader2 className="w-12 h-12 text-[#8B1B1F] animate-spin mb-4" />
+              <p className="text-gray-600 text-lg">Loading products...</p>
+            </div>
+          )}
 
-                {/* Products Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-                  {category.products.map((product, prodIndex) => (
-                    <div 
-                      key={prodIndex}
-                      className="bg-gradient-to-br from-[#FDF2F2] to-white p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border-2 border-[#FBE5E5] hover:shadow-lg hover:border-[#8B1B1F] transition-all"
-                    >
-                      {/* Product Icon */}
-                      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2 sm:mb-3 md:mb-4">{product.icon}</div>
-                      
-                      {/* Product Name */}
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black mb-2 sm:mb-3 text-gray-900">{product.name}</h3>
-                      
-                      {/* Variants */}
-                      <div className="mb-3 sm:mb-4">
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                          {product.variants.map((variant, vIndex) => (
-                            <span 
-                              key={vIndex}
-                              className="text-[10px] sm:text-xs bg-[#8B1B1F] text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full font-semibold"
-                            >
-                              {variant}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Description */}
-                      <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{product.description}</p>
-                      
-                      {/* Features */}
-                      <div className="space-y-1.5 sm:space-y-2">
-                        {product.features.map((feature, fIndex) => (
-                          <div key={fIndex} className="flex items-start gap-1.5 sm:gap-2">
-                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#8B1B1F] mt-0.5 flex-shrink-0" />
-                            <span className="text-[10px] sm:text-xs text-gray-700">{feature}</span>
+          {/* Error State */}
+          {error && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-xl p-6 text-center">
+              <p className="text-red-600 font-semibold">{error}</p>
+            </div>
+          )}
+
+          {/* Products Grid */}
+          {!loading && !error && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
+              {displayedProducts.map((product) => (
+                <div 
+                  key={product.id}
+                  className="bg-gradient-to-br from-pink-50 via-white to-pink-50 rounded-3xl shadow-lg p-7 hover:shadow-2xl transition-all duration-300 border-2 border-pink-100 hover:border-[#8B1B1F] flex flex-col"
+                >
+                  {/* Product Logo/Icon */}
+                  <div className="text-7xl mb-6 flex justify-start">
+                    {product.logo}
+                  </div>
+
+                  {/* Product Name */}
+                  <h3 className="text-2xl font-black text-gray-900 mb-4 text-left leading-tight min-h-[60px]">
+                    {product.productName}
+                  </h3>
+                  
+                  {/* Variants (from backend) - show as pill badges */}
+                  {Array.isArray(product.variants) && product.variants.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {product.variants.map((variant, vIdx) => (
+                        <span
+                          key={vIdx}
+                          className="bg-[#8B1B1F] text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-sm"
+                        >
+                          {variant}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Category Tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    <span className="bg-gradient-to-r from-[#8B1B1F] to-[#A52A2A] text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md">
+                      {product.productCategory}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-5 text-left leading-relaxed flex-grow">
+                    {product.description}
+                  </p>
+
+                  {/* Features/Points */}
+                  {product.points && product.points.length > 0 && (
+                    <div className="space-y-3 mt-auto pt-4 border-t border-gray-200">
+                      {product.points.map((point, index) => (
+                        <div key={index} className="flex items-start gap-2.5">
+                          <div className="w-5 h-5 rounded-full border-2 border-[#8B1B1F] flex items-center justify-center mt-0.5 flex-shrink-0">
+                            <FontAwesomeIcon icon={faCheckCircle} className="w-3 h-3 text-[#8B1B1F] fill-[#8B1B1F]" />
                           </div>
-                        ))}
-                      </div>
+                          <span className="text-sm text-gray-700 leading-snug">{point}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
+
+          {/* Empty State */}
+          {!loading && !error && displayedProducts.length === 0 && (
+            <div className="text-center py-12">
+              <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <p className="text-gray-500 text-lg font-semibold">No products available yet</p>
+              <p className="text-gray-400 text-sm mt-2">Check back soon for our latest offerings!</p>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Category Overview removed per request */}
 
       {/* B2B Features Section */}
       <section className="py-10 sm:py-12 md:py-16 lg:py-20 bg-white">

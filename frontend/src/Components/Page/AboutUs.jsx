@@ -1,5 +1,7 @@
 import React from 'react';
-import { ShoppingBag, Target, Heart, Award, Shield, Factory, TrendingUp, Users, Star, Leaf, CheckCircle, Globe, Package, Truck } from 'lucide-react';
+import { ShoppingBag, Target, Heart, Award, Shield, Factory, TrendingUp, Users, Star, Leaf, Globe, Package, Truck } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
 import momosImg from '../../assets/AboutUs/momos2.png';
 import parathaImg from '../../assets/AboutUs/Paratha2.png';
@@ -263,7 +265,7 @@ function AboutUs() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-[#FDF2F2] to-white p-6 rounded-xl border border-[#FBE5E5]">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-white" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="font-black text-gray-900 mb-2">Quality Ingredients</h4>
                 <p className="text-gray-600 text-sm">Meticulous attention from raw material selection to final packaging</p>
@@ -304,15 +306,15 @@ function AboutUs() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Build long-lasting partnerships through reliable service</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Address unique needs of retail and HoReCa sectors</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Foster culture of culinary excellence globally</span>
                 </li>
               </ul>
@@ -331,15 +333,15 @@ function AboutUs() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Continuously innovate product offerings</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Expand global reach with sustainable practices</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Drive growth of Indian culinary traditions worldwide</span>
                 </li>
               </ul>
@@ -405,13 +407,285 @@ function AboutUs() {
             </div>
           </div>
 
-          {/* Horizontal Timeline */}
-          <div className="p-10 rounded-3xl shadow-xl border border-[#FBE5E5]">
-            <img 
-              src={timelineImg} 
-              alt="Company Timeline Journey" 
-              className="w-full h-auto object-contain mx-auto "
-            />
+          {/* Corporate Milestones Timeline */}
+          <div className="relative  p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl">
+            {/* Background Pattern */}
+            
+
+            {/* Title */}
+            <div className="relative z-10 text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
+                Our <span className="text-[#A52A2A]">Milestones</span>
+              </h2>
+            </div>
+
+            {/* Desktop Timeline - Horizontal Shields */}
+            <div className="hidden lg:block relative z-10">
+              {/* Connection Line */}
+              <div className="absolute bottom-20 left-[10%] right-[10%] h-1 bg-gradient-to-r from-[#5B8FA3] via-[#6B9B5F] via-[#A67C52] via-[#5B8FA3] to-[#8B5BA3]"></div>
+              
+              <div className="grid grid-cols-5 gap-4 pb-24">
+                {/* Foundation */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    {/* Shield Shape */}
+                    <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Foundation</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Established as a Proprietorship Firm in Pune, Maharashtra on December 15, 1990.
+                      </p>
+                    </div>
+                    
+                    {/* Bottom Icon Circle */}
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <span className="text-2xl">🏢</span>
+                    </div>
+
+                    {/* Year Label */}
+                    <div className="text-3xl font-black text-[#5B8FA3]">1990</div>
+                  </div>
+                </div>
+
+                {/* Product Expansion */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#6B9B5F] to-[#5A8A4F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Product Expansion</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Strategic shift to diverse frozen foods including momos, parathas, and vegetables.
+                      </p>
+                    </div>
+                    
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#6B9B5F] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <span className="text-2xl">📈</span>
+                    </div>
+
+                    <div className="text-3xl font-black text-[#6B9B5F]">2000s</div>
+                  </div>
+                </div>
+
+                {/* Multi-Plant System */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#A67C52] to-[#8F6B42] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Multi-Plant System</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Developed a robust multi-plant production system for scalability and consistency.
+                      </p>
+                    </div>
+                    
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#A67C52] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <span className="text-2xl">🏭</span>
+                    </div>
+
+                    <div className="text-3xl font-black text-[#A67C52]">2010s</div>
+                  </div>
+                </div>
+
+                {/* Global Presence */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Global Presence</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Recognized merchant exporter with growing international presence and private label services.
+                      </p>
+                    </div>
+                    
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <span className="text-2xl">🌍</span>
+                    </div>
+
+                    <div className="text-3xl font-black text-[#5B8FA3]">Present</div>
+                  </div>
+                </div>
+
+                {/* Future */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#8B5BA3] to-[#724A8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Future</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Future growth and innovation.
+                      </p>
+                    </div>
+                    
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#8B5BA3] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <span className="text-2xl">🚀</span>
+                    </div>
+
+                    <div className="text-3xl font-black text-[#8B5BA3]">Future</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tablet Timeline - 2 Columns */}
+            <div className="hidden md:block lg:hidden relative z-10 pb-24">
+              <div className="grid grid-cols-2 gap-8 mb-16">
+                {/* Foundation */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-xl mb-3 text-center border-b-2 border-white pb-2">Foundation</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Established as a Proprietorship Firm in Pune, Maharashtra on December 15, 1990.
+                      </p>
+                    </div>
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl mb-4">
+                      <span className="text-2xl">🏢</span>
+                    </div>
+                    <div className="text-xl font-black text-[#5B8FA3]">1990</div>
+                  </div>
+                </div>
+
+                {/* Product Expansion */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#6B9B5F] to-[#5A8A4F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-xl mb-3 text-center border-b-2 border-white pb-2">Product Expansion</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Strategic shift to diverse frozen foods including momos, parathas, and vegetables.
+                      </p>
+                    </div>
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#6B9B5F] flex items-center justify-center shadow-xl mb-4">
+                      <span className="text-2xl">📈</span>
+                    </div>
+                    <div className="text-xl font-black text-[#6B9B5F]">2000s</div>
+                  </div>
+                </div>
+
+                {/* Multi-Plant System */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#A67C52] to-[#8F6B42] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-xl mb-3 text-center border-b-2 border-white pb-2">Multi-Plant System</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Developed a robust multi-plant production system for scalability and consistency.
+                      </p>
+                    </div>
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#A67C52] flex items-center justify-center shadow-xl mb-4">
+                      <span className="text-2xl">🏭</span>
+                    </div>
+                    <div className="text-xl font-black text-[#A67C52]">2010s</div>
+                  </div>
+                </div>
+
+                {/* Global Presence */}
+                <div className="group relative">
+                  <div className="flex flex-col items-center">
+                    <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-72 flex flex-col mb-4">
+                      <h4 className="text-white font-black text-xl mb-3 text-center border-b-2 border-white pb-2">Global Presence</h4>
+                      <p className="text-white text-sm leading-relaxed text-center">
+                        Recognized merchant exporter with growing international presence and private label services.
+                      </p>
+                    </div>
+                    <div className="w-16 h-16 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl mb-4">
+                      <span className="text-2xl">🌍</span>
+                    </div>
+                    <div className="text-xl font-black text-[#5B8FA3]">Present</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Future - Centered */}
+              <div className="group relative">
+                <div className="max-w-sm mx-auto flex flex-col items-center">
+                  <div className="relative bg-gradient-to-b from-[#8B5BA3] to-[#724A8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 h-72 flex flex-col mb-4">
+                    <h4 className="text-white font-black text-xl mb-3 text-center border-b-2 border-white pb-2">Future</h4>
+                    <p className="text-white text-sm leading-relaxed text-center">
+                      Future growth and innovation.
+                    </p>
+                  </div>
+                  <div className="w-16 h-16 bg-white rounded-full border-4 border-[#8B5BA3] flex items-center justify-center shadow-xl mb-4">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <div className="text-3xl font-black text-[#8B5BA3]">Future</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Timeline - Vertical */}
+            <div className="md:hidden relative z-10 space-y-16">
+              {/* Foundation */}
+              <div className="group relative">
+                <div className="relative">
+                  <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-64 flex flex-col">
+                    <div className="text-3xl font-black text-white/80 mb-2 text-center">1990</div>
+                    <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Foundation</h4>
+                    <p className="text-white text-xs leading-relaxed text-center">
+                      Established as a Proprietorship Firm in Pune, Maharashtra on December 15, 1990.
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl">
+                    <span className="text-xl">🏢</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Expansion */}
+              <div className="group relative">
+                <div className="relative">
+                  <div className="relative bg-gradient-to-b from-[#6B9B5F] to-[#5A8A4F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-64 flex flex-col">
+                    <div className="text-3xl font-black text-white/80 mb-2 text-center">2000s</div>
+                    <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Product Expansion</h4>
+                    <p className="text-white text-xs leading-relaxed text-center">
+                      Strategic shift to diverse frozen foods including momos, parathas, and vegetables.
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white rounded-full border-4 border-[#6B9B5F] flex items-center justify-center shadow-xl">
+                    <span className="text-xl">📈</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Multi-Plant System */}
+              <div className="group relative">
+                <div className="relative">
+                  <div className="relative bg-gradient-to-b from-[#A67C52] to-[#8F6B42] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-64 flex flex-col">
+                    <div className="text-3xl font-black text-white/80 mb-2 text-center">2010s</div>
+                    <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Multi-Plant System</h4>
+                    <p className="text-white text-xs leading-relaxed text-center">
+                      Developed a robust multi-plant production system for scalability and consistency.
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white rounded-full border-4 border-[#A67C52] flex items-center justify-center shadow-xl">
+                    <span className="text-xl">🏭</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Global Presence */}
+              <div className="group relative">
+                <div className="relative">
+                  <div className="relative bg-gradient-to-b from-[#5B8FA3] to-[#4A7C8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 transform group-hover:scale-105 transition-all duration-300 h-64 flex flex-col">
+                    <div className="text-3xl font-black text-white/80 mb-2 text-center">Present</div>
+                    <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Global Presence</h4>
+                    <p className="text-white text-xs leading-relaxed text-center">
+                      Recognized merchant exporter with growing international presence and private label services.
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white rounded-full border-4 border-[#5B8FA3] flex items-center justify-center shadow-xl">
+                    <span className="text-xl">🌍</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Future */}
+              <div className="group relative">
+                <div className="relative">
+                  <div className="relative bg-gradient-to-b from-[#8B5BA3] to-[#724A8F] rounded-t-3xl rounded-b-full border-4 border-white shadow-2xl p-6 pb-10 group-hover:scale-105  h-64 flex flex-col">
+                    <h4 className="text-white font-black text-lg mb-3 text-center border-b-2 border-white pb-2">Future</h4>
+                    <p className="text-white text-xs leading-relaxed text-center">
+                      Future growth and innovation.
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-white rounded-full border-4 border-[#8B5BA3] flex items-center justify-center shadow-xl">
+                    <span className="text-xl">🚀</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -442,15 +716,15 @@ function AboutUs() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Strategic vision and operational excellence</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Expertise in international food safety standards</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Customer-centric philosophy and innovation</span>
                 </li>
               </ul>
@@ -469,15 +743,15 @@ function AboutUs() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Multi-stage inspection process expertise</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">HACCP and GMP compliance</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#8B1B1F] mt-1 flex-shrink-0" />
+                  <FontAwesomeIcon icon={faCheckCircle} className="w-5 h-5 text-[#8B1B1F] mt-1 shrink-0" />
                   <span className="text-gray-700">Continuous training on latest advancements</span>
                 </li>
               </ul>
