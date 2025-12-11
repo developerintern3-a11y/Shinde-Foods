@@ -10,9 +10,24 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
-import frozenVegImg from '../../assets/Homeimg/FrozenFood.png';
+import frozenVegImg from '../../assets/Homeimg/2148969427-removebg-preview.png';
 
 export default function GetProducts() {
+
+  const images = [momosImg, parathaImg, frozenVegImg]; // your images
+  // Example: const images = ["/img/momo1.jpg", "/img/momo2.jpg", "/img/momo3.jpg"];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+  
+    return () => clearInterval(interval);
+  }, []);
+
+
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -210,7 +225,7 @@ export default function GetProducts() {
     <div style={{ fontFamily: "'Inter', Arial, sans-serif" }} className="bg-white">
       
       {/* Hero Section */}
-      <section className="relative py-8 sm:py-12 md:py-26 lg:py-50 bg-gradient-to-br from-orange-500 via-red-600 to-red-500 overflow-hidden">
+      <section className="relative py-8 sm:py-12 md:py-26 lg:py-30 bg-gradient-to-br from-orange-500 via-red-600 to-red-500 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
@@ -230,22 +245,38 @@ export default function GetProducts() {
 
             {/* Right Image */}
             <div className="relative hidden md:block">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img 
-                  src={momosImg} 
-                  alt="Delicious Food Products" 
-                  className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[340px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              </div>
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 font-black px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full shadow-xl transform rotate-12 text-xs sm:text-sm md:text-base">
-                Premium Quality
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white text-orange-600 font-black px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full shadow-xl text-xs sm:text-sm md:text-base">
-                Fresh & Frozen
-              </div>
-            </div>
+  <div className="relative w-full h-[300px] overflow-hidden rounded-3xl">
+
+    {/* Slides */}
+    <div
+      className="flex transition-transform duration-700 ease-in-out"
+      style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    >
+      {images.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          className="w-full h-[300px] object-cover flex-shrink-0"
+          alt=""
+        />
+      ))}
+    </div>
+
+    {/* Dots */}
+    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2">
+      {images.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentIndex(index)}
+          className={`h-3 w-3 rounded-full ${
+            currentIndex === index ? "bg-white" : "bg-white/50"
+          }`}
+        ></button>
+      ))}
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </section>

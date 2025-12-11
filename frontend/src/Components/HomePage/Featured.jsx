@@ -3,28 +3,32 @@ import { useNavigate } from 'react-router-dom';
 import { Leaf, Shield, Award, Sparkles, Package, UtensilsCrossed, Apple, ArrowRight } from 'lucide-react';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
-import frozenVegetableImg from '../../assets/Homeimg/FrozenFood.png';
+import frozenVegetableImg from '../../assets/Homeimg/2148969427-removebg-preview.png';
+import samosaimg from '../../assets/Homeimg/13491-removebg-preview.png';
+import dalimg from '../../assets/Homeimg/WhatsApp_Image_2025-11-24_at_12.40.23_PM-removebg-preview.png';
+import readygravy from '../../assets/Homeimg/32001-removebg-preview.png';
+
 
 // Data Structure for the Product Categories
 const productCategories = [
   {
     id: 1,
     name: "Momos",
-    subtitle: "Veg & Non-Veg Varieties",
+    subtitle: "Healthy Momos. Real Taste.",
     icon: Package,
     image: momosImg,
     badge: "READY IN 15 MIN",
-    description: "Authentic steamed dumplings filled with fresh vegetables and premium meats",
+    description: "Whole-wheat momos,Steamed, not fried",
     gradient: "from-[#8B1B1F] to-[#A52A2A]"
   },
   {
     id: 2,
-    name: "Parathas",
-    subtitle: "All Authentic Variants",
+    name: "Paratha",
+    subtitle: " Everyday nutrition, simple taste.",
     icon: UtensilsCrossed,
     image: parathaImg,
     badge: "AUTHENTIC TASTE",
-    description: "Traditional Indian flatbreads with delicious fillings - aloo, gobhi, mix veg and more",
+    description: "Made with fresh vegetable purée, Soft texture, no maida",
     gradient: "from-[#6B1519] to-[#8B1B1F]"
   },
   {
@@ -35,6 +39,36 @@ const productCategories = [
     image: frozenVegetableImg,
     badge: "FARM FRESH",
     description: "Flash-frozen vegetables retaining peak freshness, nutrients and natural flavors",
+    gradient: "from-[#A52A2A] to-[#6B1519]"
+  },
+  {
+    id: 4,
+    name: "Samosa",
+    subtitle: "Crisp taste, low oil.",
+    icon: Apple,
+    image: samosaimg,
+    badge: "FARM FRESH",
+    description: "Baked samosa (not fried),40% less oil",
+    gradient: "from-[#A52A2A] to-[#6B1519]"
+  },
+  {
+    id: 5,
+    name: "Ready Gravies",
+    subtitle: "Home-style, slow-cooked gravies",
+    icon: Apple,
+    image: readygravy,
+    badge: "FARM FRESH",
+    description: "Tomato & spice base,No artificial colours",
+    gradient: "from-[#A52A2A] to-[#6B1519]"
+  },
+  {
+    id: 6,
+    name: "Varieties",
+    subtitle: "Pure taste. Clean cooking.",
+    icon: Apple,
+    image: dalimg,
+    badge: "FARM FRESH",
+    description: "Butter Masala,Palak Curry,Dal Makhani",
     gradient: "from-[#A52A2A] to-[#6B1519]"
   },
 ];
@@ -63,16 +97,16 @@ const FeaturedProducts = () => {
   return (
     <div className="bg-white py-4 sm:py-5 md:py-6 px-3 sm:px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Title */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-18">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-2 tracking-tight">
             <span className="bg-gradient-to-r from-[#8B1B1F] via-[#A52A2A] to-[#6B1519] bg-clip-text text-transparent">
               Product Category
             </span>
-            
+
           </h2>
-          
+
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 md:mt-6">
             <div className="w-8 sm:w-10 md:w-12 h-0.5 sm:h-1 bg-gradient-to-r from-transparent to-[#8B1B1F]"></div>
             <div className="w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-[#8B1B1F] rounded-full"></div>
@@ -92,22 +126,22 @@ const FeaturedProducts = () => {
             >
               {/* Card Container */}
               <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-gray-50 to-[#FDF2F2] p-0.5 sm:p-1 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
-                
+
                 {/* Inner Card */}
                 <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden">
-                  
+
                   {/* Icon Container */}
                   <div className="relative h-56 sm:h-64 md:h-72 flex items-center justify-center bg-gradient-to-br from-[#FDF2F2] to-white overflow-hidden">
-                    
+
                     {/* Product Image */}
                     <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 md:p-8">
-                      <img 
-                        src={product.image} 
+                      <img
+                        src={product.image}
                         alt={product.name}
                         className="w-full h-full object-contain transform group-hover:scale-110 transition-all duration-500"
                       />
                     </div>
-                    
+
                     {/* Badge */}
                     <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
                       <span className="inline-block bg-[#8B1B1F] text-white px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-wider shadow-lg">
@@ -131,9 +165,9 @@ const FeaturedProducts = () => {
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                       {product.description}
                     </p>
-                    
+
                     {/* Explore More Button */}
-                    <button 
+                    <button
                       onClick={() => handleExploreClick(product.name)}
                       className="mt-3 sm:mt-4 flex items-center justify-center font-bold transition-colors cursor-pointer w-full bg-gradient-to-r from-[#8B1B1F] to-[#A52A2A] text-white px-6 py-3 rounded-xl hover:shadow-lg transform hover:scale-105"
                     >
