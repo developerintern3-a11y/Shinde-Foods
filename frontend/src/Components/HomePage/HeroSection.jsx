@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Download, Phone, Mail } from 'lucide-react';
-import image1 from '../../assets/Homeimg/2148694347.jpg';
-import image2 from '../../assets/Homeimg/8696.jpg';
+import image1 from '../../assets/Homeimg/2148694347.png';
+import image2 from '../../assets/Homeimg/pavbhaji.png';
 import image3 from '../../assets/Homeimg/82963.jpg';
-import image4 from '../../assets/Homeimg/image4.png';
-import image5 from '../../assets/Homeimg/18635.jpg';
+import image4 from '../../assets/Homeimg/image4.jpg';
+import image5 from '../../assets/Homeimg/dalmakhni.png';
 import image6 from '../../assets/Homeimg/image6.png';
+import image7 from '../../assets/Homeimg/springroll.png';
+import image8 from '../../assets/Homeimg/ChatGPT Image Dec 15, 2025, 03_28_09 PM.png';
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,7 +22,7 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
-      image: image1
+      image: image8
     },
     {
       id: 2,
@@ -28,7 +30,7 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
-      image: image2
+      image: image1
     },
     {
       id: 3,
@@ -36,7 +38,7 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
-      image: image3
+      image: image2
     },
     {
       id: 4,
@@ -44,7 +46,7 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
-      image: image4
+      image: image3
     },
     {
       id: 5,
@@ -52,7 +54,7 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
-      image: image5
+      image: image4
     },
     {
       id: 6,
@@ -60,8 +62,25 @@ export default function HeroSlider() {
       highlight: "Export and HoReCa",
       subtitle: "Quality You Can Trust, Taste You Can't Resist",
       description: "Shinde Foods – Quality You Can Trust",
+      image: image5
+    },
+    {
+      id: 7,
+      title: "Premium Frozen Foods for",
+      highlight: "Export and HoReCa",
+      subtitle: "Quality You Can Trust, Taste You Can't Resist",
+      description: "Shinde Foods – Quality You Can Trust",
       image: image6
-    }
+    },
+    {
+      id: 8,
+      title: "Premium Frozen Foods for",
+      highlight: "Export and HoReCa",
+      subtitle: "Quality You Can Trust, Taste You Can't Resist",
+      description: "Shinde Foods – Quality You Can Trust",
+      image: image7
+    },
+   
   ];
 
   const nextSlide = () => {

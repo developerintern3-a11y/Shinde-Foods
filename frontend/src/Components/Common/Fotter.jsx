@@ -118,7 +118,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h3 className="text-xl font-black mb-5 text-white uppercase tracking-wide">Contact Info</h3>
             <div className="space-y-4">
-              <div className="flex items-start gap-3 group">
+              {/* <div className="flex items-start gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg shrink-0 group-hover:bg-yellow-200 transition-all duration-300">
                   <Phone className="w-4 h-4 group-hover:text-[#8B1B1F]" />
                 </div>
@@ -128,7 +128,7 @@ export default function Footer() {
                     +91 9923786079
                   </a>
                 </div>
-              </div>
+              </div> */}
               
               <div className="flex items-start gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg shrink-0 group-hover:bg-yellow-200 transition-all duration-300">
@@ -142,7 +142,7 @@ export default function Footer() {
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 group">
+              {/* <div className="flex items-start gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg shrink-0 group-hover:bg-yellow-200 transition-all duration-300">
                   <MapPin className="w-4 h-4 group-hover:text-[#8B1B1F]" />
                 </div>
@@ -153,7 +153,7 @@ export default function Footer() {
                     Shirur, Pune, Maharashtra 412403
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

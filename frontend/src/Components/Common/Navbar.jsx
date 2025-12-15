@@ -21,7 +21,7 @@ export default function Navbar() {
                 <img 
                   src={logo}
                   alt="Shinde Food Logo" 
-                  className="h-10 sm:h-12 md:h-14 lg:h-15 w-auto"
+                  className="h-10 sm:h-12 md:h-14 lg:h-15 w-auto rounded-md"
                 />
               </div>
               {/* Company Name */}

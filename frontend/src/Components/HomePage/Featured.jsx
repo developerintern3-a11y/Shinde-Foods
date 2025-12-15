@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { Leaf, Shield, Award, Sparkles, Package, UtensilsCrossed, Apple, ArrowRight } from 'lucide-react';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
-import frozenVegetableImg from '../../assets/Homeimg/2148969427-removebg-preview.png';
-import samosaimg from '../../assets/Homeimg/13491-removebg-preview.png';
-import dalimg from '../../assets/Homeimg/WhatsApp_Image_2025-11-24_at_12.40.23_PM-removebg-preview.png';
+import frozenVegetableImg from '../../assets/Homeimg/19315-removebg-preview.png';
+import samosaimg from '../../assets/Homeimg/punjabi-samosa.png';
+import dalimg from '../../assets/Homeimg/Generated_Image_December_15__2025_-_4_33PM-removebg-preview.png';
 import readygravy from '../../assets/Homeimg/32001-removebg-preview.png';
 
 

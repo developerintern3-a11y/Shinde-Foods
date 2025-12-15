@@ -10,7 +10,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import phetaLogo from '../../assets/Homeimg/Pheta.png';
 import momosImg from '../../assets/Homeimg/momos.png';
 import parathaImg from '../../assets/Homeimg/Paratha.png';
-import frozenVegImg from '../../assets/Homeimg/2148969427-removebg-preview.png';
+import frozenVegImg from '../../assets/Homeimg/19315-removebg-preview.png';
 
 export default function GetProducts() {
 

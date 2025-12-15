@@ -70,13 +70,7 @@ function Contactus() {
       subDetails: "Official correspondence",
       color: "from-[#8B1B1F] to-[#A52A2A]"
     },
-    {
-      icon: MapPin,
-      title: "Registered Office",
-      details: "Pabal Futanwadi Road, Pabal",
-      subDetails: "Shirur, Pune, Maharashtra - 412403",
-      color: "from-[#6B1519] to-[#8B1B1F]"
-    },
+    
     {
       icon: Building2,
       title: "Location",
@@ -186,10 +180,10 @@ function Contactus() {
                   <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300">
                     <h3 className="text-xl font-black text-gray-900 mb-4">Contact Info</h3>
                     <ul className="space-y-3 text-sm text-gray-600">
-                      <li className="flex items-start gap-2">
+                      {/* <li className="flex items-start gap-2">
                         <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-[#8B1B1F]" />
                         <span>Pabal Futanwadi Road, Pabal, Shirur, Pune - 412403</span>
-                      </li>
+                      </li> */}
                       <li className="flex items-start gap-2">
                         <Building2 className="w-4 h-4 shrink-0 mt-0.5 text-[#8B1B1F]" />
                         <span>Pune, Maharashtra, India</span>
@@ -320,7 +314,7 @@ function Contactus() {
 
           {/* Address and Additional Info */}
           <div className="space-y-4 sm:space-y-5 md:space-y-6">
-            <div className="bg-gradient-to-br from-white to-[#FDF2F2] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl border-2 border-[#FBE5E5]">
+            {/* <div className="bg-gradient-to-br from-white to-[#FDF2F2] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl border-2 border-[#FBE5E5]">
               <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] flex items-center justify-center flex-shrink-0 shadow-lg">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" strokeWidth={2.5} />
@@ -335,7 +329,7 @@ function Contactus() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="bg-gradient-to-br from-[#8B1B1F] to-[#A52A2A] rounded-3xl p-8 shadow-xl text-white">
               <Mail className="w-12 h-12 mb-4" strokeWidth={2.5} />
