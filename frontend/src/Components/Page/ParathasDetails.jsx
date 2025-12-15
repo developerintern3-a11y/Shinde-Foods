@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Utensils, Sparkles, Award, Shield, Clock, ChefHat } from 'lucide-react';
-import parathaImg from '../../assets/AboutUs/paratha2.png';
+import parathaImg from '../../assets/AboutUs/Paratha2.png';
 
 export default function ParathasDetails() {
   const navigate = useNavigate();
