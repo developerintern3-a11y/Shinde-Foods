@@ -7,8 +7,8 @@ import image3 from '../../assets/Homeimg/82963.jpg';
 import image4 from '../../assets/Homeimg/image4.jpg';
 import image5 from '../../assets/Homeimg/dalmakhni.png';
 import image6 from '../../assets/Homeimg/image6.png';
-import image7 from '../../assets/Homeimg/springroll.png';
-import image8 from '../../assets/Homeimg/ChatGPT Image Dec 15, 2025, 03_28_09 PM.png';
+import image7 from '../../assets/Homeimg/springrolltwo.jpg';
+import image8 from '../../assets/Homeimg/pouch-two.jpg';
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
